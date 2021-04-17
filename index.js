@@ -9,7 +9,9 @@ for (i=0 ; i < myNodelist.length; i++){
 	myNodelist[i].appendChild(span);
 
 }
-var close =documen.getElementByClassName("close");
+
+// Click on a close button to hide the current list item
+var close =document.getElementsByClassName("close");
 var i;
 for (i=0;i < close.length; i++){
 	close[i].onclick = function(){
@@ -19,14 +21,12 @@ for (i=0;i < close.length; i++){
 }
 
 // Add a "checked" symbol when clicking on a list item
-var list =document.querySelector('ul');
+var list = document.querySelector('ul');
 
-list.addEventListener('click', function(ev){
-	if (ev.target.tagName === 'li'){
-		ev.target.classList.toogle('checked');
+list.addEventListener('click', function(ev) {
+	if (ev.target.tagName === 'li') {
+		ev.target.classList.toggle('checked');
 	}
-
-
 },false);
 
 // Create a new list item when clicking on the "Add" button
@@ -42,4 +42,15 @@ function newElement() {
 		document.getElementById("TDL").appendChild(li);
 	}
 	document.getElementById("myInput").value="";
+
+	// var span = document.createElement("span");
+	// var txt = document.createTextNode("\u00D7")
+	// span.appendChild(txt);
+	// li.appendChild(span);
+	// for (i=0; i< close.length; i++){
+	// 	close[i].onclick = function(){
+	// 		var div = this.parentElement;
+	// 		div.style.display= "none";
+	// 	}
+	// }
 }
